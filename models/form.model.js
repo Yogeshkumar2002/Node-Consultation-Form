@@ -44,24 +44,24 @@ const DetailSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  SymptomsStart: {
+  startDate: {
     type: Date,
     required: true,
   },
-  Severity: {
+  severity: {
     type: String,
     required: true,
   },
-  SymptomsChanged: {
+  symptomsChanged: {
     type: String,
     required: true,
   },
-  Consultation: {
+  consultedDoctor: {
     type: String,
     required: true,
   },
   diseases: {
-    type: String,
+    type: [String],
     required: true,
   },
   vaccinations: {
@@ -72,7 +72,7 @@ const DetailSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  Smoking: {
+  smoking: {
     type: String,
     required: true,
   },
@@ -113,8 +113,18 @@ const DetailSchema = new mongoose.Schema({
     required: true,
   },
   Report: {
+   name: {
+     type: String,
+    required: true,
+   },
+   size: {
+     type: Number,
+     required: true
+   }, 
+   mimetype: {
     type: String,
     required: true,
+   }
   },
   dor: {
     type: Date,
@@ -126,8 +136,11 @@ const DetailSchema = new mongoose.Schema({
   },
 },
 {
-    timeStamps: true
+    timestamps: true
 });
 
 const Details = mongoose.model("Details", DetailSchema);
 module.exports = Details;
+
+
+
