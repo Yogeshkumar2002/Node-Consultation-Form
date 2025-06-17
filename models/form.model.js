@@ -113,18 +113,11 @@ const DetailSchema = new mongoose.Schema({
     required: true,
   },
   Report: {
-   name: {
-     type: String,
-    required: true,
-   },
-   size: {
-     type: Number,
-     required: true
-   }, 
-   mimetype: {
-    type: String,
-    required: true,
-   }
+    originalName: String,
+    newPath: String,
+    storedFileName: String,
+    size: Number,
+    mimetype: String,
   },
   dor: {
     type: Date,
